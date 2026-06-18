@@ -1,0 +1,17 @@
+<%
+    String _name = session.getAttribute("userName") != null ? session.getAttribute("userName").toString() : "User";
+    String _role = session.getAttribute("role") != null ? session.getAttribute("role").toString() : "";
+    String _dashLink = "admin".equalsIgnoreCase(_role) ? "adminDashboard.jsp" : "residentDashboard.jsp";
+%>
+<header class="site-header">
+    <div class="site-header__inner">
+        <a href="<%= _dashLink %>" class="brand">
+            <span class="brand__mark">G</span>
+            Greenway Portal
+        </a>
+        <nav class="nav-links">
+            <span class="nav-user"><%= _name %><% if (!_role.isEmpty()) { %> &middot; <%= _role %><% } %></span>
+            <a href="logout" class="nav-logout">Sign out</a>
+        </nav>
+    </div>
+</header>

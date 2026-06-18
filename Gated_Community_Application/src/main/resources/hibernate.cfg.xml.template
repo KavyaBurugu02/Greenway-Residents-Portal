@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<!--
+    SETUP INSTRUCTIONS
+    ──────────────────
+    1. Copy this file:  cp hibernate.cfg.xml.template hibernate.cfg.xml
+    2. Fill in YOUR_DB_USERNAME and YOUR_DB_PASSWORD below.
+    3. Make sure 'gated_community' database exists in MySQL.
+    4. hibernate.cfg.xml is listed in .gitignore — your credentials stay local.
+-->
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/gated_community</property>
+        <property name="hibernate.connection.username">YOUR_DB_USERNAME</property>
+        <property name="hibernate.connection.password">YOUR_DB_PASSWORD</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">false</property>
+    </session-factory>
+</hibernate-configuration>

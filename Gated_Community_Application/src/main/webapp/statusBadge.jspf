@@ -1,0 +1,8 @@
+<%
+    Complaint _bc = (Complaint) request.getAttribute("_bc");
+    String _bs = (_bc != null && _bc.getStatus() != null) ? _bc.getStatus() : "Open";
+    String _cls;
+    if ("Resolved".equalsIgnoreCase(_bs)) { _cls = "badge-resolved"; }
+    else if ("In Progress".equalsIgnoreCase(_bs) || "Progress".equalsIgnoreCase(_bs)) { _cls = "badge-progress"; }
+    else { _cls = "badge-open"; }
+%><span class="badge <%= _cls %>"><%= _bs %></span>
